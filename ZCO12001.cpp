@@ -13,6 +13,7 @@ int main(){
     stack <int> nest;
     vector <int> subSymb;
     int nestDepth = 0, maxSymb = 0,maxsymbIndex,minnestIndex=0;
+    subSymb.push_back(0);
     for(int i =0; i < n; i++){
         if (arr[i] == 1) nest.push(1);
         if (arr[i] == 2) nest.pop();
@@ -25,10 +26,13 @@ int main(){
             subSymb.push_back(i+1);
         }
     }
-    for(int i = 0; i < subSymb.size()-1; i++){
+    int arr_size = subSymb.size();
+    for(int i = 0; i < arr_size-1; i++){
         if (maxSymb < subSymb[i+1]-subSymb[i]){
-            maxsymbIndex = subSymb[i]+1;
+            //cout << "AAAA" << endl;
+            //maxsymbIndex = subSymb[i]+1;
             maxSymb =  subSymb[i+1]-subSymb[i];
+            maxsymbIndex = subSymb[i] + 1;
         }
     }
     cout << nestDepth << " " << minnestIndex  << " " << maxSymb << " " << maxsymbIndex  << endl;
