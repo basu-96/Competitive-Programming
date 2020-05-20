@@ -1,5 +1,6 @@
 #include<bits/stdc++.h>
 
+
 using namespace std;
 
 int main(){
@@ -9,31 +10,27 @@ int main(){
     for(int i = 0; i < n; i++){
         cin >> arr[i];
     }
-    // Nesting depth variables
-    int flag = 0,nestDepth = 0,maxDepth = 0;
-    int nestIndex, minIndex = INT_MAX;
-    // Max num of symbols variables
-    for(int i = 0; i < n; i++){
-        if(arr[i] == 1){
-            flag++;
-        }    
-        else{
-            nestDepth++;
-            flag--;
+    stack <int> nest;
+    vector <int> subSymb;
+    int nestDepth = 0, maxSymb = 0,maxsymbIndex,minnestIndex=0;
+    for(int i =0; i < n; i++){
+        if (arr[i] == 1) nest.push(1);
+        if (arr[i] == 2) nest.pop();
+        int stack_size = nest.size();
+        if (nestDepth < stack_size){
+            minnestIndex = i+1;
+            nestDepth = stack_size;
         }
-        if (flag == 0){
-            cout << nestDepth << endl;
-            if (maxDepth < nestDepth){
-                maxDepth = nestDepth;
-                 nestIndex = i + 1 - nestDepth;
-                 if (nestIndex < minIndex){
-                    minIndex = nestIndex;
-                 }
-            }
-            nestDepth = 0;
+        if (stack_size == 0){
+            subSymb.push_back(i+1);
         }
     }
-   // cout << maxDepth << endl;
-   // cout << minIndex << endl;
+    for(int i = 0; i < subSymb.size()-1; i++){
+        if (maxSymb < subSymb[i+1]-subSymb[i]){
+            maxsymbIndex = subSymb[i]+1;
+            maxSymb =  subSymb[i+1]-subSymb[i];
+        }
+    }
+    cout << nestDepth << " " << minnestIndex  << " " << maxSymb << " " << maxsymbIndex  << endl;
     return 0;
 }
