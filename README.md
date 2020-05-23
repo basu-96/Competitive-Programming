@@ -1,2 +1,2 @@
 # hackerrank_solutions
-Codes to few of challenges in hackerrank
+Codes to few of challenges in hackerrank and CodeChef
