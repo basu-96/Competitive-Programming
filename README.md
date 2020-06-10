@@ -1,2 +1,2 @@
-# hackerrank_solutions
-Codes to few of challenges in hackerrank and CodeChef
+# Competitive Programming
+Executable codes to challenges in Hackerrank and CodeChef. Will be updated with challenges from CodeForces in near future.
