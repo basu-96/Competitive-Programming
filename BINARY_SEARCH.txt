@@ -4,7 +4,7 @@ target <- represents the target value
 PSEUDOCODE:
 L = 0, R = N-1
 while L <= R
-  mid = L + floor(R-L) / w
+  mid = L + floor((R-L) / 2)
   if a[mid] == target:
     return mid
   if a[mid] < target:
@@ -13,14 +13,23 @@ while L <= R
     R = mid = 1
 return -1
 
-2. First value >= target
+2. First value >= target ( Lower bound of target )
 PSEUDOCODE:
 L = 0, R = N-1
 ans = -1
 while L <= R:
-  mid = L + floor(R - L) / 2
+  mid = L + floor((R - L) / 2)
   if a[mid] >= target:
+    ans = a[mid]
     R = mid-1
   else:
     L = mid+1
 return ans
+
+3. Rotated array: Somebody rotated( shifted ) a sroted array.
+  Find the smallest element
+  
+4. Find peak: The array increases and then decreases.
+  Find the maximum.
+
+5. Sqrt(x) upto some precision.
