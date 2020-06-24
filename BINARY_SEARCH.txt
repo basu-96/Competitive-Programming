@@ -1,3 +1,10 @@
+//------------------------------------------------------//
+//                                                      //
+//                                                      //
+// SOURCE - https://www.youtube.com/watch?v=GU7DpgHINWQ //
+//                                                      //
+//                                                      //
+//------------------------------------------------------//
 1. Finding a target value in a sorted array
 a      <- sorted array
 target <- represents the target value
@@ -32,4 +39,4 @@ return ans
 4. Find peak: The array increases and then decreases.
   Find the maximum.
 
-5. Sqrt(x) upto some precision.
+5. Sqrt(x) upto some precision
