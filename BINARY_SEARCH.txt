@@ -1,0 +1,26 @@
+1. Finding a target value in a sorted array
+a      <- sorted array
+target <- represents the target value
+PSEUDOCODE:
+L = 0, R = N-1
+while L <= R
+  mid = L + floor(R-L) / w
+  if a[mid] == target:
+    return mid
+  if a[mid] < target:
+    L = mid + 1
+  else:
+    R = mid = 1
+return -1
+
+2. First value >= target
+PSEUDOCODE:
+L = 0, R = N-1
+ans = -1
+while L <= R:
+  mid = L + floor(R - L) / 2
+  if a[mid] >= target:
+    R = mid-1
+  else:
+    L = mid+1
+return ans
