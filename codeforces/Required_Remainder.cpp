@@ -1,6 +1,6 @@
 //
 // Problem statement - https://codeforces.com/contest/1374/problems
-//
+
 
 #include<bits/stdc++.h>
 using namespace std;
